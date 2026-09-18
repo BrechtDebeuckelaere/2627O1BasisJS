@@ -1,5 +1,7 @@
 // Er zit een fout in je return value
 
-naam = "brecht";
+function zegMijnNaam(naam) {
+  return "hallo, " + naam + "!";
+}
 
-module.exports = { naam };
+module.exports = { zegMijnNaam };
