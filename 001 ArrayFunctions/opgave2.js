@@ -10,14 +10,8 @@ const producten = [
 // het gebruik van map is hier overbodige rekenkracht.
 // Gebruik filter in plaats van map
 const totalePrijs = producten
-  .map((product) => {
-    if (product.inVoorraad) {
-      return product.prijs;
-    } else {
-      return 0;
-    }
-  })
-  .reduce((numToAdd, currVal) => numToAdd + currVal, 0);
+  .filter((product) => product.inVoorraad)
+  .reduce((numToAdd, currVal) => numToAdd + currVal.prijs, 0);
 console.log(totalePrijs);
 
 //opgave 2
