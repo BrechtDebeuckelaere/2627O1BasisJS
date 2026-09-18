@@ -17,8 +17,8 @@ console.log(gezochteNaam);
 // opgelet met het gebruik van variabele namen (binnen uw reduce)
 const prijzen = [10, 25, 5, 15];
 const totalePrijs = prijzen.reduce(
-  (numToAdd, currVal) => numToAdd + currVal,
-  0
+  (toeTeVoegenNum, verlopigeWaarde) => toeTeVoegenNum + verlopigeWaarde,
+  0,
 );
 console.log(totalePrijs);
 
