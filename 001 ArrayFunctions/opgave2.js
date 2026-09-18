@@ -6,6 +6,9 @@ const producten = [
   { naam: "Kabel", prijs: 10, inVoorraad: false },
   { naam: "Headset", prijs: 80, inVoorraad: true },
 ];
+
+// het gebruik van map is hier overbodige rekenkracht.
+// Gebruik filter in plaats van map
 const totalePrijs = producten
   .map((product) => {
     if (product.inVoorraad) {
@@ -18,6 +21,9 @@ const totalePrijs = producten
 console.log(totalePrijs);
 
 //opgave 2
+
+// je doet een foreach om dan een push te doen.
+// Eer bestaat een array function die dit in 1 keer doet.
 const studenten = [
   { naam: "emily", score: 48 },
   { naam: "Daan", score: 72 },
@@ -39,6 +45,9 @@ studenten
 console.log(geslaagdeStudenten);
 
 //opgave3
+
+// Je geeft enkel de namen van de personen boven de 18.
+// Ik verwacht de gemiddelde leeftijd van de personen boven de 18.
 const personen = [
   { naam: "Tom", leeftijd: 15 },
   { naam: "An", leeftijd: 24 },

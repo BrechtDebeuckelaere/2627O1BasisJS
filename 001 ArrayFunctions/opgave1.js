@@ -14,10 +14,11 @@ const gezochteNaam = namen.find((naam) => naam[0] == "A");
 console.log(gezochteNaam);
 
 //opgave 4
+// opgelet met het gebruik van variabele namen (binnen uw reduce)
 const prijzen = [10, 25, 5, 15];
 const totalePrijs = prijzen.reduce(
   (numToAdd, currVal) => numToAdd + currVal,
-  0,
+  0
 );
 console.log(totalePrijs);
 
