@@ -17,7 +17,7 @@ console.log(totalePrijs);
 //opgave 2
 
 // je doet een foreach om dan een push te doen.
-// Eer bestaat een array function die dit in 1 keer doet.
+// Er bestaat een array function die dit in 1 keer doet.
 const studenten = [
   { naam: "emily", score: 48 },
   { naam: "Daan", score: 72 },
@@ -25,18 +25,12 @@ const studenten = [
   { naam: "Lars", score: 52 },
   { naam: "Lisa", score: 64 },
 ];
-const geslaagdeStudenten = [];
-studenten
-  .filter((punten) => {
-    if (punten.score >= 60) {
-      return true;
-    }
-  })
-  .forEach((geslaagdeStudent) => {
-    const geslaagdeStudentNaam = "student: " + geslaagdeStudent.naam;
-    geslaagdeStudenten.push(geslaagdeStudentNaam);
-  });
-console.log(geslaagdeStudenten);
+const geslaagdeStudenten = studenten.map((punten) => {
+  if (punten.score >= 60) {
+    return "student " + punten.naam;
+  }
+});
+console.log(geslaagdeStudenten); //undifined
 
 //opgave3
 
@@ -49,11 +43,14 @@ const personen = [
   { naam: "Karin", leeftijd: 36 },
   { naam: "Peter", leeftijd: 30 },
 ];
-gemiddeldeLeeftijd = personen
-  .filter((persoon) => {
-    if (persoon.leeftijd >= 18) {
-      return true;
-    }
-  })
-  .map((persoon) => persoon.naam);
+const personenBoven18 = personen.filter((persoon) => {
+  if (persoon.leeftijd >= 18) {
+    return true;
+  }
+});
+const totaleLeeftijd = personenBoven18.reduce(
+  (totaleLeeftijd, persoon) => totaleLeeftijd + persoon.leeftijd,
+  0,
+);
+const gemiddeldeLeeftijd = totaleLeeftijd / personenBoven18.length;
 console.log(gemiddeldeLeeftijd);
